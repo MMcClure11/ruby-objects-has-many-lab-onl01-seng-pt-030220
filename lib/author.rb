@@ -4,11 +4,10 @@ class Author
   
   def initialize(name)
     @name = name
-    @posts = []
   end
   
   def posts 
-    self.posts.select {|post| post.author(name) = self }
+    Post.all.select {|post| post.author == self }
   end
   
 end 
